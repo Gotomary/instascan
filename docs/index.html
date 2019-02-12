@@ -44,24 +44,25 @@ function showQRIntro() {
             </li>
           </ul>
         </section>
+        
         <section class="scans">
-          <h2>Scan or Upload</h2>
-           <ul  v-if="scans.length === 0">
-            <li class="empty" >No scans yet</li>
-            
-            
+          <h2>Scan or upload</h2>
+          <ul v-if="scans.length === 0">
+            <li class="empty">No scans yet</li>
           </ul>
-         <transition-group name="scans" tag="ul" >
-            <li  v-for="scan in scans" :key="scan.date" :title="scan.content" id="text">{{ scan.content }}</li>
-          </transition-group><input type="button" id="btn" value="GO" onClick="javascript: window.open(document.getElementById('text').value);" />
-          
+          <transition-group name="scans" tag="ul">
+            <li v-for="scan in scans" :key="scan.date" :title="scan.content" id="text">{{ scan.content }}</li>
+          </transition-group><input type="button" id="btn" value="GO" onClick="javascript: window.open(document.getElementById('text').value);">
+       
+        
+        <p>
           <ul>
           <form>
           <input type="text" size=20 placeholder="QR Code" class=qrcode-text id="text1" ><label class=qrcode-text-btn><input type=file capture=environment tabindex=-1 onclick="return showQRIntro();" onchange="openQRCamera(this);"  ></label> 
 <input type="button" id="btn" value="GO" target="_blank" onClick="javascript: window.open('' + document.getElementById('text1').value);" /></form>
         
         
-        
+         </section>
         
       </div>
       <div class="preview-container">
