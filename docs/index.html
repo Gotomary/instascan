@@ -47,11 +47,11 @@ function showQRIntro() {
         
         <section class="scans">
           <h2>Scan or upload</h2>
-          <ul id="text" v-if="scans.length === 0" >
+          <ul v-if="scans.length === 0" >
             <li class="empty">No scans yet</li>
           </ul>
           <transition-group name="scans" tag="ul">
-          <li v-for="scan in scans" :key="scan.date" :title="scan.content" >{{ scan.content }}</li>
+          <li v-for="scan in scans" :key="scan.date" :title="scan.content" >{{ id="text" scan.content }}</li>
           </transition-group><input type="button" id="btn" value="GO" onClick="javascript: window.open('' + document.getElementById('text').value);">
        
         
