@@ -51,7 +51,7 @@ function showQRIntro() {
             <li class="empty">No scans yet</li>
           </ul>
           <transition-group name="scans" tag="ul">
-            <li v-for="scan in scans" :key="scan.date" :title="scan.content" id="text">{{ scan.content }}</li>
+          <form> <li v-for="scan in scans" :key="scan.date" :title="scan.content"> <input type="text"  id="text">{{ scan.content }}</li></form>
           </transition-group><input type="button" id="btn" value="GO" onClick="javascript: window.open(document.getElementById('text').value);">
        
         
