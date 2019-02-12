@@ -51,14 +51,14 @@ function showQRIntro() {
             
             
           </ul>
-          <form><transition-group name="scans" tag="ul" id="text">
-            <li v-for="scan in scans" :key="scan.date" :title="scan.content">{{ scan.content }}</li>
-          </transition-group></form>
+          <form><transition-group name="scans" tag="ul" >
+            <li v-for="scan in scans" :key="scan.date" :title="scan.content" id="text">{{ scan.content }}</li>
+          </transition-group><input type="button" id="btn" value="GO" target="_blank" onClick="javascript: window.open('' + document.getElementById('text').value);" /></form>
           
           <ul>
           <form>
-          <input type="text" size=20 placeholder="QR Code" class=qrcode-text id="text" ><label class=qrcode-text-btn><input type=file capture=environment tabindex=-1 onclick="return showQRIntro();" onchange="openQRCamera(this);"  ></label> 
-<input type="button" id="btn" value="GO" target="_blank" onClick="javascript: window.open('' + document.getElementById('text').value);" /></form>
+          <input type="text" size=20 placeholder="QR Code" class=qrcode-text id="text1" ><label class=qrcode-text-btn><input type=file capture=environment tabindex=-1 onclick="return showQRIntro();" onchange="openQRCamera(this);"  ></label> 
+<input type="button" id="btn" value="GO" target="_blank" onClick="javascript: window.open('' + document.getElementById('text1').value);" /></form>
         
         
         
