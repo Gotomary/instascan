@@ -47,15 +47,19 @@ function showQRIntro() {
         <section class="scans">
           <h2>Scan or Upload</h2>
           <ul v-if="scans.length === 0">
-            <form><li class="empty">No scans yet</li><input type="button" id="btn" value="GO" target="_blank" onClick="javascript: window.open('' + document.getElementById('text').value);" /></form>
+            <li class="empty">No scans yet</li>
             
-            <input type="text" size=20 placeholder="QR Code" class=qrcode-text id="text" ><label class=qrcode-text-btn><input type=file capture=environment tabindex=-1 onclick="return showQRIntro();" onchange="openQRCamera(this);"  ></label> 
-<input type="button" id="btn" value="GO" target="_blank" onClick="javascript: window.open('' + document.getElementById('text').value);" /></form>
+            
           </ul>
-          <transition-group name="scans" tag="ul">
+          <form><transition-group name="scans" tag="ul" id="text">
             <li v-for="scan in scans" :key="scan.date" :title="scan.content">{{ scan.content }}</li>
-          </transition-group>
-        </section>
+          </transition-group></form>
+          
+          <ul>
+          <form>
+          <input type="text" size=20 placeholder="QR Code" class=qrcode-text id="text" ><label class=qrcode-text-btn><input type=file capture=environment tabindex=-1 onclick="return showQRIntro();" onchange="openQRCamera(this);"  ></label> 
+<input type="button" id="btn" value="GO" target="_blank" onClick="javascript: window.open('' + document.getElementById('text').value);" /></form>
+        
         
         
         
